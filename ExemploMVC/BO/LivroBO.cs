@@ -11,15 +11,29 @@ namespace ExemploMVC.BO
 {
     public class LivroBO
     {
+
         public void Gravar(Livro livro)
         {
             LivroDAO livroDao = new LivroDAO();
-            Form1 form = new Form1();
-
             if ((livro.Titulo != "") && (livro.Autor.AutorId != 0))
             {
                 livroDao.Insert(livro);
             }
         }
+
+
+        public void Editar(Livro livro)
+        {
+            LivroDAO livroDao = new LivroDAO();
+            if ((livro.Titulo != "") && (livro.Autor.AutorId != 0))
+            {
+                livroDao.Update(livro);
+            }
+        }
+
+
+
+
+
     }
 }

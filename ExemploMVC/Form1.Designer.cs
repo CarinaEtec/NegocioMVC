@@ -48,6 +48,10 @@
             this.btnGravarAutor = new System.Windows.Forms.Button();
             this.btnNovoLivro = new System.Windows.Forms.Button();
             this.btnGravarLivro = new System.Windows.Forms.Button();
+            this.btnBuscarAutor = new System.Windows.Forms.Button();
+            this.btnEditarAutor = new System.Windows.Forms.Button();
+            this.btnEditarLivro = new System.Windows.Forms.Button();
+            this.btnBuscarLivro = new System.Windows.Forms.Button();
             this.grpAutor.SuspendLayout();
             this.grpLivro.SuspendLayout();
             this.SuspendLayout();
@@ -84,7 +88,6 @@
             // 
             // txtAutorId
             // 
-            this.txtAutorId.Enabled = false;
             this.txtAutorId.Location = new System.Drawing.Point(190, 28);
             this.txtAutorId.Name = "txtAutorId";
             this.txtAutorId.Size = new System.Drawing.Size(262, 21);
@@ -158,7 +161,6 @@
             // 
             // txtLivroId
             // 
-            this.txtLivroId.Enabled = false;
             this.txtLivroId.Location = new System.Drawing.Point(190, 31);
             this.txtLivroId.Name = "txtLivroId";
             this.txtLivroId.Size = new System.Drawing.Size(262, 21);
@@ -205,7 +207,7 @@
             this.btnNovoAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovoAutor.Location = new System.Drawing.Point(529, 33);
             this.btnNovoAutor.Name = "btnNovoAutor";
-            this.btnNovoAutor.Size = new System.Drawing.Size(98, 49);
+            this.btnNovoAutor.Size = new System.Drawing.Size(100, 30);
             this.btnNovoAutor.TabIndex = 2;
             this.btnNovoAutor.Text = "Novo Autor";
             this.btnNovoAutor.UseVisualStyleBackColor = true;
@@ -214,9 +216,9 @@
             // btnGravarAutor
             // 
             this.btnGravarAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGravarAutor.Location = new System.Drawing.Point(529, 129);
+            this.btnGravarAutor.Location = new System.Drawing.Point(529, 71);
             this.btnGravarAutor.Name = "btnGravarAutor";
-            this.btnGravarAutor.Size = new System.Drawing.Size(98, 46);
+            this.btnGravarAutor.Size = new System.Drawing.Size(100, 30);
             this.btnGravarAutor.TabIndex = 3;
             this.btnGravarAutor.Text = "Gravar Autor";
             this.btnGravarAutor.UseVisualStyleBackColor = true;
@@ -227,7 +229,7 @@
             this.btnNovoLivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovoLivro.Location = new System.Drawing.Point(529, 242);
             this.btnNovoLivro.Name = "btnNovoLivro";
-            this.btnNovoLivro.Size = new System.Drawing.Size(98, 46);
+            this.btnNovoLivro.Size = new System.Drawing.Size(100, 30);
             this.btnNovoLivro.TabIndex = 4;
             this.btnNovoLivro.Text = "Novo Livro";
             this.btnNovoLivro.UseVisualStyleBackColor = true;
@@ -236,19 +238,65 @@
             // btnGravarLivro
             // 
             this.btnGravarLivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGravarLivro.Location = new System.Drawing.Point(529, 358);
+            this.btnGravarLivro.Location = new System.Drawing.Point(529, 278);
             this.btnGravarLivro.Name = "btnGravarLivro";
-            this.btnGravarLivro.Size = new System.Drawing.Size(98, 46);
+            this.btnGravarLivro.Size = new System.Drawing.Size(100, 30);
             this.btnGravarLivro.TabIndex = 5;
             this.btnGravarLivro.Text = "Gravar Livro";
             this.btnGravarLivro.UseVisualStyleBackColor = true;
             this.btnGravarLivro.Click += new System.EventHandler(this.btnGravarLivro_Click);
+            // 
+            // btnBuscarAutor
+            // 
+            this.btnBuscarAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarAutor.Location = new System.Drawing.Point(529, 108);
+            this.btnBuscarAutor.Name = "btnBuscarAutor";
+            this.btnBuscarAutor.Size = new System.Drawing.Size(100, 30);
+            this.btnBuscarAutor.TabIndex = 6;
+            this.btnBuscarAutor.Text = "Buscar Autor";
+            this.btnBuscarAutor.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarAutor
+            // 
+            this.btnEditarAutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarAutor.Location = new System.Drawing.Point(529, 144);
+            this.btnEditarAutor.Name = "btnEditarAutor";
+            this.btnEditarAutor.Size = new System.Drawing.Size(100, 30);
+            this.btnEditarAutor.TabIndex = 7;
+            this.btnEditarAutor.Text = "Editar Autor";
+            this.btnEditarAutor.UseVisualStyleBackColor = true;
+            this.btnEditarAutor.Click += new System.EventHandler(this.btnEditarAutor_Click);
+            // 
+            // btnEditarLivro
+            // 
+            this.btnEditarLivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarLivro.Location = new System.Drawing.Point(529, 365);
+            this.btnEditarLivro.Name = "btnEditarLivro";
+            this.btnEditarLivro.Size = new System.Drawing.Size(100, 30);
+            this.btnEditarLivro.TabIndex = 9;
+            this.btnEditarLivro.Text = "Editar Livro";
+            this.btnEditarLivro.UseVisualStyleBackColor = true;
+            this.btnEditarLivro.Click += new System.EventHandler(this.btnEditarLivro_Click);
+            // 
+            // btnBuscarLivro
+            // 
+            this.btnBuscarLivro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarLivro.Location = new System.Drawing.Point(529, 326);
+            this.btnBuscarLivro.Name = "btnBuscarLivro";
+            this.btnBuscarLivro.Size = new System.Drawing.Size(100, 30);
+            this.btnBuscarLivro.TabIndex = 8;
+            this.btnBuscarLivro.Text = "Buscar Livro";
+            this.btnBuscarLivro.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 423);
+            this.Controls.Add(this.btnEditarLivro);
+            this.Controls.Add(this.btnBuscarLivro);
+            this.Controls.Add(this.btnEditarAutor);
+            this.Controls.Add(this.btnBuscarAutor);
             this.Controls.Add(this.btnGravarLivro);
             this.Controls.Add(this.btnNovoLivro);
             this.Controls.Add(this.btnGravarAutor);
@@ -289,6 +337,10 @@
         private System.Windows.Forms.Button btnGravarAutor;
         private System.Windows.Forms.Button btnNovoLivro;
         private System.Windows.Forms.Button btnGravarLivro;
+        private System.Windows.Forms.Button btnBuscarAutor;
+        private System.Windows.Forms.Button btnEditarAutor;
+        private System.Windows.Forms.Button btnEditarLivro;
+        private System.Windows.Forms.Button btnBuscarLivro;
     }
 }
 

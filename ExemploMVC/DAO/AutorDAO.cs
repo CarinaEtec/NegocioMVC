@@ -32,6 +32,34 @@ namespace ExemploMVC.DAO
 
         }
 
+
+        public void Update(Autor autor)
+        {
+            try
+            {
+            MySqlCommand comando = new MySqlCommand(); //instancias MySqlCommand p/ poder entrar com uma string mysql de insert
+            comando.CommandType = CommandType.Text; //CommandType = informa q o comando é tipo texto
+            comando.CommandText = "Update autor set nome=@nome, nacionalidade=@nacionalidade where autorId=@autorId";
+
+            comando.Parameters.AddWithValue("@nome", autor.Nome);
+            comando.Parameters.AddWithValue("@nacionalidade", autor.Nacionalidade);
+            comando.Parameters.AddWithValue("@autorId", autor.AutorId);
+            ConexaoBanco.CRUD(comando); // Está sendo enviado p/ o método CRUD
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível se conectar" + ex.Message);
+            }
+
+        }
+
+    
+
+
+
+
+        /*
+        SLIDE
         public Autor BuscaPorId(int id) // o SELECT retorna um valor, que é o livro buscado
         {
             MySqlCommand comando = new MySqlCommand();
@@ -51,7 +79,7 @@ namespace ExemploMVC.DAO
                 dr.Read();
                 autor.AutorId = (int)dr["autorId"];
                 autor.Nacionalidade = (string)dr["nacionalidade"];
-               autor.Nome = (string)dr["nome"];
+                autor.Nome = (string)dr["nome"];
             }
             else
             {
@@ -60,6 +88,10 @@ namespace ExemploMVC.DAO
             }
             return autor;
         }
+
+
+
+    */
 
 
     }

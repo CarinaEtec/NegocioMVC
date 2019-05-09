@@ -16,7 +16,7 @@ namespace ExemploMVC.DAO
         {
             try
             {
-                MySqlCommand comando = new MySqlCommand(); //instancias MySqlCommand p/ poder entrar com uma string mysql de insert
+                MySqlCommand comando = new MySqlCommand(); //instanciar MySqlCommand p/ poder entrar com uma string mysql de insert
                 comando.CommandType = CommandType.Text; //CommandType = informa q o comando é tipo texto
                 comando.CommandText = "Insert into Livro(titulo,datapublicacao, autorId) values(@titulo,@datapublicacao,@autorId)";
 
@@ -31,6 +31,34 @@ namespace ExemploMVC.DAO
             }
 
         }
+
+
+
+        public void Update(Livro livro)
+        {
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(); //instanciar MySqlCommand p/ poder entrar com uma string mysql de insert
+                comando.CommandType = CommandType.Text; //CommandType = informa q o comando é tipo texto
+                comando.CommandText = "Update livro set titulo=@titulo, datapublicacao=@datapublicacao, autorId=@autorId where livroId=@livroId";
+
+                comando.Parameters.AddWithValue("@titulo", livro.Titulo);
+                comando.Parameters.AddWithValue("@datapublicacao", livro.Datapublicacao);
+                comando.Parameters.AddWithValue("@autorId", livro.Autor.AutorId);
+                comando.Parameters.AddWithValue("@livroId", livro.LivroId);
+
+                ConexaoBanco.CRUD(comando); // Está sendo enviado p/ o método CRUD
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível se conectar" + ex.Message);
+            }
+
+        }
+
+
+
+
 
     }
 }

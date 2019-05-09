@@ -69,5 +69,49 @@ namespace ExemploMVC
             txtDtPublicacao.Clear();
             txtIdAutorLivro.Clear();
         }
+
+
+
+        private void btnEditarAutor_Click(object sender, EventArgs e)
+        {
+            Autor autor = new Autor();
+            AutorBO autorBO = new AutorBO();
+            autor.AutorId = Convert.ToInt16(txtAutorId.Text);
+            autor.Nome = txtNome.Text;
+            autor.Nacionalidade = txtNacionalidade.Text;
+
+            autorBO.Editar(autor);
+            MessageBox.Show("Autor editado com sucesso");
+
+            grpAutor.Enabled = false;
+            txtAutorId.Clear();
+            txtNome.Clear();
+            txtNacionalidade.Clear();
+        }
+
+        private void btnEditarLivro_Click(object sender, EventArgs e)
+        {
+            Livro livro = new Livro();
+            LivroBO livrobo = new LivroBO();
+
+            livro.LivroId = Convert.ToInt16(txtLivroId.Text);
+            livro.Titulo = txtTitulo.Text;
+            livro.Datapublicacao = Convert.ToDateTime(txtDtPublicacao.Text);
+            livro.Autor.AutorId = Convert.ToInt16(txtIdAutorLivro.Text);
+
+            livrobo.Editar(livro);
+            MessageBox.Show("Livro editado com sucesso");
+
+            grpLivro.Enabled = false;
+            txtTitulo.Clear();
+            txtDtPublicacao.Clear();
+            txtIdAutorLivro.Clear();
+            txtLivroId.Clear();
+
+
+        }
+
+
+
     }
 }

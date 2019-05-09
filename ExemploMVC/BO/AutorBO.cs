@@ -19,5 +19,16 @@ namespace ExemploMVC.BO
                 autorDao.Insert(autor);
             }
         }
+
+
+        public void Editar(Autor autor)
+        {
+            AutorDAO autorDao = new AutorDAO();
+            if ((autor.Nome != "") && (autor.Nacionalidade != ""))
+            {
+                autorDao.Update(autor);
+            }
+        }
+
     }
 }
