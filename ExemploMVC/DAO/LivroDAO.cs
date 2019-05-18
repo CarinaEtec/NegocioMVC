@@ -57,7 +57,38 @@ namespace ExemploMVC.DAO
         }
 
 
+        public Livro BuscaPorId(int id) // o SELECT retorna um valor, que é o livro buscado
+        {
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "Select * from Livro where livroId=@id";
 
+            comando.Parameters.AddWithValue("@id", id);
+
+            //MySqlDataReader retorna uma tabela do BD
+            MySqlDataReader dr = ConexaoBanco.Selecionar(comando);
+
+            Livro livro = new Livro();//instancia para poder retornar um valor
+            // se dr tiver linhas preenchidas
+            if (dr.HasRows)
+            {
+                //preenche o objeto
+                dr.Read();
+                livro.LivroId = (int)dr["livroId"];
+                livro.Titulo = (string)dr["titulo"];
+                livro.Datapublicacao = (DateTime)dr["datapublicacao"];
+                livro.Autor.AutorId = (int)dr["autorId"];
+            }
+            else
+            {
+                //zera o objeto
+                livro.LivroId = 0;
+                livro.Titulo = "";
+                //livro.Datapublicacao = '0000-00-00';
+                livro.Autor.AutorId = 0;
+            }
+            return livro;
+        }
 
 
     }

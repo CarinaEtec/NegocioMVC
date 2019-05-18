@@ -55,12 +55,7 @@ namespace ExemploMVC.DAO
 
     
 
-
-
-
-        /*
-        SLIDE
-        public Autor BuscaPorId(int id) // o SELECT retorna um valor, que é o livro buscado
+        public Autor BuscaPorId(int id) // o SELECT retorna um valor, que é o autor buscado
         {
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = CommandType.Text;
@@ -83,15 +78,17 @@ namespace ExemploMVC.DAO
             }
             else
             {
-                //coloca null no objeto
-                autor = null;
+                //zera o objeto
+                autor.AutorId = 0;
+                autor.Nome = "";
+                autor.Nacionalidade = "";
+
             }
             return autor;
         }
 
 
 
-    */
 
 
     }

@@ -30,5 +30,23 @@ namespace ExemploMVC.BO
             }
         }
 
+
+        public void Buscar(Autor autor)
+        {
+            AutorDAO autorDao = new AutorDAO();
+            
+            if (autor.AutorId > 0)
+            {
+                //Armazena o resultado buscado
+                var autorTemp = autorDao.BuscaPorId(autor.AutorId);
+                //preenche os dados do autor 
+                autor.Nome = autorTemp.Nome;
+                autor.Nacionalidade = autorTemp.Nacionalidade;
+            }
+        }
+
+
+
+
     }
 }

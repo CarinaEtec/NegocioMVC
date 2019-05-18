@@ -32,7 +32,21 @@ namespace ExemploMVC.BO
         }
 
 
+        public void Buscar(Livro livro)
+        {
+            LivroDAO livroDao = new LivroDAO();
 
+            if (livro.LivroId > 0)
+            {
+                //Armazena o resultado buscado
+                var livroTemp = livroDao.BuscaPorId(livro.LivroId);
+                //preenche os dados do autor 
+                livro.Titulo = livroTemp.Titulo;
+                livro.Datapublicacao = livroTemp.Datapublicacao;
+                livro.Autor.AutorId = livroTemp.Autor.AutorId;
+
+            }
+        }
 
 
     }

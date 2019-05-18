@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grpAutor = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtNacionalidade = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtAutorId = new System.Windows.Forms.TextBox();
@@ -52,12 +53,14 @@
             this.btnEditarAutor = new System.Windows.Forms.Button();
             this.btnEditarLivro = new System.Windows.Forms.Button();
             this.btnBuscarLivro = new System.Windows.Forms.Button();
+            this.btnBuscarL = new System.Windows.Forms.Button();
             this.grpAutor.SuspendLayout();
             this.grpLivro.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpAutor
             // 
+            this.grpAutor.Controls.Add(this.btnBuscar);
             this.grpAutor.Controls.Add(this.txtNacionalidade);
             this.grpAutor.Controls.Add(this.txtNome);
             this.grpAutor.Controls.Add(this.txtAutorId);
@@ -71,6 +74,16 @@
             this.grpAutor.TabIndex = 0;
             this.grpAutor.TabStop = false;
             this.grpAutor.Text = "Autor";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(377, 23);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtNacionalidade
             // 
@@ -90,7 +103,7 @@
             // 
             this.txtAutorId.Location = new System.Drawing.Point(190, 28);
             this.txtAutorId.Name = "txtAutorId";
-            this.txtAutorId.Size = new System.Drawing.Size(262, 21);
+            this.txtAutorId.Size = new System.Drawing.Size(125, 21);
             this.txtAutorId.TabIndex = 3;
             // 
             // label3
@@ -122,6 +135,7 @@
             // 
             // grpLivro
             // 
+            this.grpLivro.Controls.Add(this.btnBuscarL);
             this.grpLivro.Controls.Add(this.txtIdAutorLivro);
             this.grpLivro.Controls.Add(this.txtDtPublicacao);
             this.grpLivro.Controls.Add(this.txtTitulo);
@@ -163,7 +177,7 @@
             // 
             this.txtLivroId.Location = new System.Drawing.Point(190, 31);
             this.txtLivroId.Name = "txtLivroId";
-            this.txtLivroId.Size = new System.Drawing.Size(262, 21);
+            this.txtLivroId.Size = new System.Drawing.Size(125, 21);
             this.txtLivroId.TabIndex = 3;
             // 
             // label7
@@ -255,6 +269,7 @@
             this.btnBuscarAutor.TabIndex = 6;
             this.btnBuscarAutor.Text = "Buscar Autor";
             this.btnBuscarAutor.UseVisualStyleBackColor = true;
+            this.btnBuscarAutor.Click += new System.EventHandler(this.btnBuscarAutor_Click);
             // 
             // btnEditarAutor
             // 
@@ -287,6 +302,17 @@
             this.btnBuscarLivro.TabIndex = 8;
             this.btnBuscarLivro.Text = "Buscar Livro";
             this.btnBuscarLivro.UseVisualStyleBackColor = true;
+            this.btnBuscarLivro.Click += new System.EventHandler(this.btnBuscarLivro_Click);
+            // 
+            // btnBuscarL
+            // 
+            this.btnBuscarL.Location = new System.Drawing.Point(377, 26);
+            this.btnBuscarL.Name = "btnBuscarL";
+            this.btnBuscarL.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarL.TabIndex = 7;
+            this.btnBuscarL.Text = "Buscar";
+            this.btnBuscarL.UseVisualStyleBackColor = true;
+            this.btnBuscarL.Click += new System.EventHandler(this.btnBuscarL_Click);
             // 
             // Form1
             // 
@@ -341,6 +367,8 @@
         private System.Windows.Forms.Button btnEditarAutor;
         private System.Windows.Forms.Button btnEditarLivro;
         private System.Windows.Forms.Button btnBuscarLivro;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnBuscarL;
     }
 }
 

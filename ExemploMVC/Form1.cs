@@ -23,16 +23,35 @@ namespace ExemploMVC
         {
             grpAutor.Enabled = false;
             grpLivro.Enabled = false;
+
+            btnBuscar.Visible = false;
+            btnGravarAutor.Enabled = false;
+            btnEditarAutor.Enabled = false;
+            btnBuscarL.Visible = false;
+            btnGravarLivro.Enabled = false;
+            btnEditarLivro.Enabled = false;
+
+
+
         }
 
         private void btnNovoAutor_Click(object sender, EventArgs e)
         {
             grpAutor.Enabled = true;
+            btnBuscarAutor.Enabled = false;
+            btnEditarAutor.Enabled = false;
+            btnGravarAutor.Enabled = true;
+
+
+
         }
 
         private void btnNovoLivro_Click(object sender, EventArgs e)
         {
             grpLivro.Enabled = true;
+            btnBuscarLivro.Enabled = false;
+            btnEditarLivro.Enabled = false;
+            btnGravarLivro.Enabled = true;
         }
 
         private void btnGravarAutor_Click(object sender, EventArgs e)
@@ -87,6 +106,16 @@ namespace ExemploMVC
             txtAutorId.Clear();
             txtNome.Clear();
             txtNacionalidade.Clear();
+
+
+            btnBuscar.Visible = false;
+            btnGravarAutor.Enabled = false;
+            btnEditarAutor.Enabled = false;
+            btnNovoAutor.Enabled = true;
+
+
+
+
         }
 
         private void btnEditarLivro_Click(object sender, EventArgs e)
@@ -111,7 +140,92 @@ namespace ExemploMVC
 
         }
 
+        private void btnBuscarAutor_Click(object sender, EventArgs e)
+        {
+            txtAutorId.Enabled = true;
+            btnBuscar.Visible= true;
+            grpAutor.Enabled = true;
+            btnEditarAutor.Enabled = true;
+            btnNovoAutor.Enabled = false;
+            btnGravarAutor.Enabled = false;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Autor autor = new Autor();
+            AutorBO autorBO = new AutorBO();
+
+            try
+            {
+                autor.AutorId = Convert.ToInt16(txtAutorId.Text);
+                autorBO.Buscar(autor);
+
+                if (autor.Nome == "")
+                {
+                    MessageBox.Show("Autor não encontrado");
+                    txtAutorId.Clear();
+                    txtNome.Clear();
+                    txtNacionalidade.Clear();
+                }
+                else
+                {
+                    txtNome.Text = autor.Nome;
+                    txtNacionalidade.Text = autor.Nacionalidade;
+                }
+
+            }
+
+            catch
+            {
+                MessageBox.Show("Preencha corretamente as informações");
+
+            }
 
 
+        }
+
+        private void btnBuscarLivro_Click(object sender, EventArgs e)
+        {
+            txtLivroId.Enabled = true;
+            btnBuscarL.Visible = true;
+            grpLivro.Enabled = true;
+            btnEditarLivro.Enabled = true;
+            btnNovoLivro.Enabled = false;
+            btnGravarLivro.Enabled = false;
+        }
+
+        private void btnBuscarL_Click(object sender, EventArgs e)
+        {
+            Livro livro = new Livro();
+            LivroBO livroBO = new LivroBO();
+
+            try
+            {
+                livro.LivroId = Convert.ToInt16(txtLivroId.Text);
+                livroBO.Buscar(livro);
+
+
+                if (livro.Titulo == "")
+                {
+                    MessageBox.Show("Livro não encontrado");
+                    txtLivroId.Clear();
+                    txtTitulo.Clear();
+                    txtDtPublicacao.Clear();
+                    txtIdAutorLivro.Clear();
+                }
+                else
+                {
+                    txtTitulo.Text = livro.Titulo;
+                    txtDtPublicacao.Text = Convert.ToString(livro.Datapublicacao);
+                    //livro.Datapublicacao = Convert.ToDateTime(txtDtPublicacao.Text);
+                    //livro.Autor.AutorId = Convert.ToInt16(txtIdAutorLivro.Text);
+                    txtIdAutorLivro.Text = Convert.ToString(livro.Autor.AutorId);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Preencha corretamente as informações");
+            }
+        }
     }
 }
