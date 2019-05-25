@@ -88,7 +88,24 @@ namespace ExemploMVC.DAO
         }
 
 
+        public void Delete(Autor autor)
+        {
+            try
+            {
+                MySqlCommand comando = new MySqlCommand(); 
+                comando.CommandType = CommandType.Text; 
+                comando.CommandText = "Delete from autor where autorId=@autorId";
 
+                comando.Parameters.AddWithValue("@autorId", autor.AutorId);
+
+                ConexaoBanco.CRUD(comando); 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível se conectar" + ex.Message);
+            }
+
+        }
 
 
     }

@@ -91,5 +91,25 @@ namespace ExemploMVC.DAO
         }
 
 
+        public void Delete(Livro livro)
+        {
+            try
+            {
+                MySqlCommand comando = new MySqlCommand();
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = "Delete from livro where livroId=@livroId";
+
+                comando.Parameters.AddWithValue("@livroId", livro.LivroId);
+
+                ConexaoBanco.CRUD(comando);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível se conectar" + ex.Message);
+            }
+
+        }
+
+
     }
 }

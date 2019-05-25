@@ -48,6 +48,13 @@ namespace ExemploMVC.BO
             }
         }
 
-
+        public void Deletar(Livro livro)
+        {
+            LivroDAO livroDao = new LivroDAO();
+            if (livro.LivroId > 0)
+            {
+                livroDao.Delete(livro);
+            }
+        }
     }
 }

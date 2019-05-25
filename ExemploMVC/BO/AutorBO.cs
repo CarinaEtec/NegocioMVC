@@ -45,7 +45,14 @@ namespace ExemploMVC.BO
             }
         }
 
-
+        public void Deletar(Autor autor)
+        {
+            AutorDAO autorDao = new AutorDAO();
+            if (autor.AutorId > 0)
+            {
+                autorDao.Delete(autor);
+            }
+        }
 
 
     }
