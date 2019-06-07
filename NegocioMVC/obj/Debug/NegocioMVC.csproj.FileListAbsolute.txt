@@ -1,0 +1,15 @@
+D:\VS\NegocioMVC\NegocioMVC\bin\Debug\NegocioMVC.exe.config
+D:\VS\NegocioMVC\NegocioMVC\bin\Debug\NegocioMVC.exe
+D:\VS\NegocioMVC\NegocioMVC\bin\Debug\NegocioMVC.pdb
+D:\VS\NegocioMVC\NegocioMVC\bin\Debug\MySql.Data.dll
+D:\VS\NegocioMVC\NegocioMVC\bin\Debug\Google.Protobuf.dll
+D:\VS\NegocioMVC\NegocioMVC\bin\Debug\BouncyCastle.Crypto.dll
+D:\VS\NegocioMVC\NegocioMVC\bin\Debug\MySql.Data.xml
+D:\VS\NegocioMVC\NegocioMVC\obj\Debug\NegocioMVC.csprojAssemblyReference.cache
+D:\VS\NegocioMVC\NegocioMVC\obj\Debug\NegocioMVC.Form1.resources
+D:\VS\NegocioMVC\NegocioMVC\obj\Debug\NegocioMVC.Properties.Resources.resources
+D:\VS\NegocioMVC\NegocioMVC\obj\Debug\NegocioMVC.csproj.GenerateResource.cache
+D:\VS\NegocioMVC\NegocioMVC\obj\Debug\NegocioMVC.csproj.CoreCompileInputs.cache
+D:\VS\NegocioMVC\NegocioMVC\obj\Debug\NegocioMVC.csproj.CopyComplete
+D:\VS\NegocioMVC\NegocioMVC\obj\Debug\NegocioMVC.exe
+D:\VS\NegocioMVC\NegocioMVC\obj\Debug\NegocioMVC.pdb
